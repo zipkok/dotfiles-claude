@@ -21,7 +21,11 @@ Claude Code 하네스 설정 파일. 새 노트북에서 클론하면 동일한 
 ├── agents/                # 에이전트
 │   ├── exec-interviewer.md
 │   └── tech-interviewer.md
-└── skills → ~/Repository/claude/global/skills  # 글로벌 스킬
+└── skills/                # 글로벌 스킬
+    ├── directory/         # 작업 디렉토리 변경
+    ├── init-project/      # 프로젝트 부트스트랩
+    ├── jd-analyze/        # 채용공고 분석
+    └── woobs-claude-md-review/  # CLAUDE.md 검토
 ```
 
 ## 플러그인
@@ -44,8 +48,7 @@ claude
 /plugin install spex@cc-rhuss-marketplace
 /reload-plugins
 
-# 3. 글로벌 스킬 (skills 심볼릭 링크가 가리키는 대상)
-# ~/Repository/claude/global/skills/ 디렉토리가 필요
+# 3. 글로벌 스킬은 skills/ 디렉토리에 포함되어 있음 (별도 작업 불필요)
 ```
 
 ## 워크플로우 요약
