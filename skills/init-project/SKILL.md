@@ -31,7 +31,7 @@ cd ~/Repository/<project-name>
 
 ### 2. CLAUDE.md 생성
 
-`~/Repository/claude/templates/base/CLAUDE.md.tmpl` 템플릿을 기반으로 생성합니다.
+`~/.claude/templates/base/CLAUDE.md.tmpl` 템플릿을 기반으로 생성합니다.
 
 사용자에게 다음을 질문합니다:
 - 프로젝트 설명 (한 줄)
@@ -47,7 +47,7 @@ cd ~/Repository/<project-name>
 mkdir -p .claude/agents
 ```
 
-`~/Repository/claude/templates/base/settings.local.json.tmpl`을 기반으로 `.claude/settings.local.json`을 생성합니다. `{{PROJECT_PATH}}`를 실제 경로로 치환합니다.
+`~/.claude/templates/base/settings.local.json.tmpl`을 기반으로 `.claude/settings.local.json`을 생성합니다. `{{PROJECT_PATH}}`를 실제 경로로 치환합니다.
 
 ### 4. CHANGELOG.md 생성
 

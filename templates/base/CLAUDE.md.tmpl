@@ -1,0 +1,35 @@
+# {{PROJECT_NAME}}
+
+{{PROJECT_DESCRIPTION}}
+
+## 기술 스택
+
+- {{TECH_STACK}}
+
+## 개발 규칙
+
+- 글로벌 규칙은 `~/.claude/CLAUDE.md` 참조
+- {{PROJECT_SPECIFIC_RULES}}
+
+## 실행 방법
+
+```bash
+{{RUN_COMMAND}}
+```
+
+## 테스트
+
+```bash
+{{TEST_COMMAND}}
+```
+
+## 워크플로우
+
+- 새 기능: `spex:ship --ask smart` 또는 단계별 `/speckit-specify` → `/speckit-implement`
+- 버그 수정: `superpowers:systematic-debugging` → TDD
+- 코드 리뷰: `spex:review-code` (자동) + `/woobs-git-review` (커밋 전)
+
+## 에이전트
+
+- 도메인 특화 에이전트는 `.claude/agents/`에 추가
+- 코드 리뷰: spex:deep-review (기본) + 글로벌 6-Agent (대규모 변경 시)
