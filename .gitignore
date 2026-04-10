@@ -1,0 +1,30 @@
+# 세션/프로젝트 데이터
+sessions/
+projects/
+shell-snapshots/
+
+# 플러그인 (설치 명령으로 복원)
+plugins/
+
+# 대화/기록
+*.jsonl
+*.bak
+*.orig
+
+# 캐시/임시
+cache/
+debug/
+backups/
+file-history/
+statsig/
+.git-hierarchical/
+plans/
+
+# 설정 로컬
+.claude/
+
+# 기타
+ide/
+tasks/
+telemetry/
+statusline-command.sh
