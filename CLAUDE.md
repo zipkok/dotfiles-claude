@@ -14,7 +14,16 @@
 
 - 수정 전 관련 코드를 먼저 읽고 파악
 - 요청에 적합한 subagent 적극 제안 (Explore, Plan, Agent 등)
-- implement 시 **프로덕션 코드를 작성하기 전에** 반드시 Skill 도구로 `superpowers:test-driven-development`를 호출하라. 이것은 선택이 아니라 필수다. "간단해서", "이미 알고 있어서", "불필요해서" 등의 이유로 생략하지 마라. 사용자가 "TDD 안 해"라고 명시적으로 말할 때만 해제
+- implement 시 상황에 따라 테스트 전략을 선택한다:
+
+  | 상황 | 접근 | 스킬 |
+  |------|------|------|
+  | 스펙 충분 + 구현 확실 | SDD → 구현 → Test-After (스펙 기준 테스트 작성) | 테스트 직접 작성 |
+  | 스펙 충분 + 구현 불확실 | SDD → TDD (테스트가 구현을 검증) | `superpowers:test-driven-development` |
+  | 스펙 부족 + 탐색적 | TDD가 설계를 이끔 (테스트가 인터페이스 결정) | `superpowers:test-driven-development` |
+
+  - 어떤 경우든 **테스트 없는 구현은 금지**
+  - 판단이 애매하면 TDD 스킬을 호출한다
 - 리뷰 실패 시 이전 단계로 돌아가기 (`spex:evolve` 또는 해당 단계 재실행)
 - superpowers 산출물은 specify 디렉토리 구조에 맞춘다:
   - brainstorming 결과 → `brainstorm/` (spex:ship 입력과 일치)
@@ -68,7 +77,7 @@ brainstorming 후 규모에 맞는 다음 단계를 제안한다. "실행 방식
 
 | 시점 | 커맨드 | 출처 | 설명 |
 |------|--------|------|------|
-| implement 시 | `superpowers:test-driven-development` | superpowers | TDD 기본 적용 (CLAUDE.md 원칙에 의해 강제) |
+| implement 시 | `superpowers:test-driven-development` | superpowers | 구현 불확실 또는 탐색적일 때 TDD 호출 (원칙 테이블 참조) |
 | implement 시 | `superpowers:dispatching-parallel-agents` | superpowers | 독립적인 태스크 2개 이상일 때 병렬 subagent 실행 |
 | tasks 후 | `/speckit-analyze` | specify CLI | review-plan 실패가 잦을 때 정합성 사전 검증 제안 |
 | PR 리뷰 수렴 시 | `superpowers:receiving-code-review` | superpowers | 외부 리뷰 피드백의 기술적 타당성 검증 후 반영 |
