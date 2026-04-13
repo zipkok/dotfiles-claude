@@ -25,6 +25,12 @@
   - 어떤 경우든 **테스트 없는 구현은 금지**
   - 판단이 애매하면 TDD 스킬을 호출한다
 - 리뷰 실패 시 이전 단계로 돌아가기 (`spex:evolve` 또는 해당 단계 재실행)
+- **게이트 선언 규칙**: 각 단계 완료 후 다음 게이트를 반드시 선언하고 실행한다. 생략하지 마라.
+  - specify 완료 → "🔒 review-spec 게이트 실행합니다" → 실행
+  - plan+tasks 완료 → "🔒 review-plan 게이트 실행합니다" → 실행
+  - implement 완료 → "🔒 review-code 게이트 실행합니다" → 실행
+  - review 통과 → "🔒 verification 게이트 실행합니다" → 실행
+  - 선언 없이 다음 단계로 넘어가는 것은 규칙 위반이다
 - superpowers 산출물은 specify 디렉토리 구조에 맞춘다:
   - brainstorming 결과 → `brainstorm/` (spex:ship 입력과 일치)
   - 그 외 산출물 → `specs/[NNN-feature]/` 하위
@@ -42,7 +48,7 @@
 | 3 | `/speckit-specify` | specify CLI | 스펙 작성 |
 | 4 | `/speckit-plan` | specify CLI | 기술 계획 |
 | 5 | `/speckit-tasks` | specify CLI | 작업 분할 |
-| 6 | `/speckit-implement` | specify CLI | TDD 기반 구현 |
+| 6 | `/speckit-implement` | specify CLI | 구현 (테스트 전략은 원칙 참조) |
 | 7 | `superpowers:finishing-a-development-branch` | superpowers | CHANGELOG 업데이트 → merge/PR 결정 |
 
 - 0은 프로젝트 시작 시 1회만. 1~7은 기능마다 반복
@@ -64,26 +70,28 @@ brainstorming 후 규모에 맞는 다음 단계를 제안한다. "실행 방식
 
 ### Claude 자동 호출
 
-#### trait overlay 자동 실행 (Skill 도구로 호출하지 않음 — speckit 명령어 실행 시 trait가 자동 부착)
+#### 품질 게이트 (게이트 선언 규칙으로 실행)
 
-| 시점 | 실행되는 것 | 출처 | 설명 |
-|------|-----------|------|------|
-| specify 후 | `spex:review-spec` | superpowers trait overlay | 스펙 품질 게이트 |
-| plan+tasks 후 | `spex:review-plan` | superpowers trait overlay | 계획 품질 게이트 |
-| implement 후 | `spex:review-code` | superpowers + deep-review trait overlay | 스펙 준수 + 5-agent 리뷰 + 자동 수정 (최대 3회) |
-| review 통과 후 | `spex:verification` | superpowers trait overlay | 테스트 → 코드 위생 → 드리프트 체크 → 최종 판정 |
+speckit 스킬의 trait overlay가 자동 실행할 수도 있지만, **자동 실행에 의존하지 말고 게이트 선언 규칙을 따른다.**
 
-#### Claude 판단으로 호출 (CLAUDE.md 원칙에 의해 강제 또는 제안)
+| 시점 | 게이트 | 설명 |
+|------|--------|------|
+| specify 후 | `spex:review-spec` | 스펙 품질 게이트 |
+| plan+tasks 후 | `spex:review-plan` | 계획 품질 게이트 |
+| implement 후 | `spex:review-code` | 스펙 준수 + 5-agent 리뷰 + 자동 수정 (최대 3회) |
+| review 통과 후 | `spex:verification` | 테스트 → 코드 위생 → 드리프트 체크 → 최종 판정 |
 
-| 시점 | 커맨드 | 출처 | 설명 |
-|------|--------|------|------|
-| implement 시 | `superpowers:test-driven-development` | superpowers | 구현 불확실 또는 탐색적일 때 TDD 호출 (원칙 테이블 참조) |
-| implement 시 | `superpowers:dispatching-parallel-agents` | superpowers | 독립적인 태스크 2개 이상일 때 병렬 subagent 실행 |
-| tasks 후 | `/speckit-analyze` | specify CLI | review-plan 실패가 잦을 때 정합성 사전 검증 제안 |
-| PR 리뷰 수렴 시 | `superpowers:receiving-code-review` | superpowers | 외부 리뷰 피드백의 기술적 타당성 검증 후 반영 |
-| - | `/speckit-clarify` | specify CLI | 스펙이 모호하거나 누락이 있을 때 제안 |
-| - | `/speckit-constitution` | specify CLI | 기능 2개 이상 + constitution 미존재 시 제안 |
-| - | `superpowers:systematic-debugging` | superpowers | 버그/테스트 실패 시 제안 |
+#### Claude 판단으로 제안
+
+| 시점 | 커맨드 | 설명 |
+|------|--------|------|
+| implement 시 | `superpowers:test-driven-development` | 구현 불확실 또는 탐색적일 때 (원칙 테이블 참조) |
+| implement 시 | `superpowers:dispatching-parallel-agents` | 독립 태스크 2개 이상일 때 |
+| tasks 후 | `/speckit-analyze` | review-plan 반복 실패 시 |
+| PR 리뷰 수렴 시 | `superpowers:receiving-code-review` | 외부 리뷰 피드백 검증 |
+| - | `/speckit-clarify` | 스펙이 모호할 때 |
+| - | `/speckit-constitution` | 기능 2개 이상 + constitution 미존재 시 |
+| - | `superpowers:systematic-debugging` | 버그/테스트 실패 시 |
 
 ### 리뷰 실패 시
 
