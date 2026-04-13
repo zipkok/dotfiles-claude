@@ -72,7 +72,8 @@
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
     "spex@cc-rhuss-marketplace": true,
-    "claude-md-management@claude-plugins-official": true
+    "claude-md-management@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "cc-rhuss-marketplace": {
