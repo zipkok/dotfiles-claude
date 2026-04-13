@@ -14,7 +14,7 @@
 
 - 수정 전 관련 코드를 먼저 읽고 파악
 - 요청에 적합한 subagent 적극 제안 (Explore, Plan, Agent 등)
-- implement는 **반드시** `superpowers:test-driven-development` 스킬을 호출한다. 규모와 무관하게 항상 TDD (RED → GREEN → REFACTOR). 사용자가 명시적으로 "TDD 안 해"라고 할 때만 해제
+- implement 시 **프로덕션 코드를 작성하기 전에** 반드시 Skill 도구로 `superpowers:test-driven-development`를 호출하라. 이것은 선택이 아니라 필수다. "간단해서", "이미 알고 있어서", "불필요해서" 등의 이유로 생략하지 마라. 사용자가 "TDD 안 해"라고 명시적으로 말할 때만 해제
 - 리뷰 실패 시 이전 단계로 돌아가기 (`spex:evolve` 또는 해당 단계 재실행)
 - superpowers 산출물은 specify 디렉토리 구조에 맞춘다:
   - brainstorming 결과 → `brainstorm/` (spex:ship 입력과 일치)
