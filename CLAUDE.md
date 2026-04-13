@@ -29,13 +29,14 @@
 |------|--------|------|------|
 | 0 | `/init-project <name>` | 커스텀 스킬 | 프로젝트 생성 + spex 초기화 (최초 1회, 재시작 필요) |
 | 1 | `superpowers:brainstorming` | superpowers | 아이디어 정리, 요구사항 탐색 → brainstorm 파일 생성 |
-| 2 | `/speckit-specify` | specify CLI | 스펙 작성 |
-| 3 | `/speckit-plan` | specify CLI | 기술 계획 |
-| 4 | `/speckit-tasks` | specify CLI | 작업 분할 |
-| 5 | `/speckit-implement` | specify CLI | TDD 기반 구현 |
-| 6 | `superpowers:finishing-a-development-branch` | superpowers | feature 브랜치 생성 → CHANGELOG 업데이트 → merge/PR 결정 |
+| 2 | `/speckit-git-feature` | specify CLI | feature 브랜치 생성 (main 보호 hook 때문에 작업 전 필수) |
+| 3 | `/speckit-specify` | specify CLI | 스펙 작성 |
+| 4 | `/speckit-plan` | specify CLI | 기술 계획 |
+| 5 | `/speckit-tasks` | specify CLI | 작업 분할 |
+| 6 | `/speckit-implement` | specify CLI | TDD 기반 구현 |
+| 7 | `superpowers:finishing-a-development-branch` | superpowers | CHANGELOG 업데이트 → merge/PR 결정 |
 
-- 0은 프로젝트 시작 시 1회만. 1~6은 기능마다 반복
+- 0은 프로젝트 시작 시 1회만. 1~7은 기능마다 반복
 - 각 단계 사이에 품질 게이트가 자동 실행됨
 
 ### 규모별 가이드라인
@@ -44,10 +45,10 @@ brainstorming 후 규모에 맞는 다음 단계를 제안한다. "실행 방식
 
 | 규모 | 예시 | 흐름 | specify 필요 |
 |------|------|------|:----------:|
-| 🔴 버그 수정 | 1줄 수정, 오타 | brainstorming → implement → finishing | ❌ |
-| 🟡 작은 기능 | API 엔드포인트 1개 | brainstorming → implement → finishing | ❌ |
-| 🟢 일반 기능 | 새 페이지, 모듈 | brainstorming → specify → plan → tasks → implement → finishing | ✅ |
-| 🔵 대규모 기능 | 아키텍처 변경 | brainstorming → specify → plan → tasks → implement → finishing + constitution | ✅ |
+| 🔴 버그 수정 | 1줄 수정, 오타 | brainstorming → git-feature → implement → finishing | ❌ |
+| 🟡 작은 기능 | API 엔드포인트 1개 | brainstorming → git-feature → implement → finishing | ❌ |
+| 🟢 일반 기능 | 새 페이지, 모듈 | brainstorming → git-feature → specify → plan → tasks → implement → finishing | ✅ |
+| 🔵 대규모 기능 | 아키텍처 변경 | brainstorming → git-feature → specify → plan → tasks → implement → finishing + constitution | ✅ |
 
 - 🔴🟡: brainstorming이 충분한 스펙 역할. review-code의 스펙 준수 체크는 brainstorm 파일 기준
 - 🟢🔵: 정식 스펙(spec.md)이 필요. review-code가 스펙 준수율 검증
