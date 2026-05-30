@@ -28,3 +28,17 @@ ide/
 tasks/
 telemetry/
 statusline-command.sh
+
+# 런타임 데몬/잡
+daemon.lock
+daemon.log
+daemon.status.json
+daemon/
+jobs/
+.last-cleanup
+
+# MCP 인증 캐시
+mcp-needs-auth-cache.json
+
+# claude-powerline 사용량 캐시
+powerline/

@@ -1,5 +1,5 @@
 #!/bin/bash
-# main 브랜치 직접 커밋 차단
+# main 브랜치 직접 커밋 경고 (권고 — 차단하지 않음)
 input=$(cat)
 command=$(echo "$input" | jq -r '.tool_input.command // empty')
 
@@ -17,6 +17,7 @@ fi
 current_branch=$(git branch --show-current 2>/dev/null)
 
 if [ "$current_branch" = "main" ] || [ "$current_branch" = "master" ]; then
-  echo '{"error": "🚫 main 브랜치에서 직접 커밋할 수 없습니다. feature/ 또는 fix/ 브랜치를 사용하세요."}' >&2
-  exit 2
+  echo "⚠️  main/master 브랜치에 직접 커밋합니다. 가능하면 feature/* 또는 fix/* 브랜치를 사용하세요. (이 메시지는 권고이며 커밋은 진행됩니다)" >&2
 fi
+
+exit 0
