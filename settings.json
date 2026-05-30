@@ -1,4 +1,7 @@
 {
+  "permissions": {
+    "defaultMode": "auto"
+  },
   "hooks": {
     "PreToolUse": [
       {
@@ -71,24 +74,46 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "npx -y ccstatusline@latest",
-    "padding": 0
+    "command": "npx -y @owloops/claude-powerline@latest"
+  },
+  "subagentStatusLine": {
+    "type": "command",
+    "command": "jq -r 'first(.agent.name, .agent_name, .name, .session.name) // \"subagent\"' 2>/dev/null || echo subagent"
   },
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
     "spex@cc-rhuss-marketplace": true,
     "claude-md-management@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true,
+    "last30days@last30days-skill": true,
+    "claude-powerline@claude-powerline": true
   },
   "extraKnownMarketplaces": {
     "cc-rhuss-marketplace": {
       "source": {
         "source": "github",
         "repo": "rhuss/cc-rhuss-marketplace"
+      },
+      "autoUpdate": true
+    },
+    "last30days-skill": {
+      "source": {
+        "source": "github",
+        "repo": "mvanhorn/last30days-skill"
+      },
+      "autoUpdate": true
+    },
+    "claude-powerline": {
+      "source": {
+        "source": "github",
+        "repo": "Owloops/claude-powerline"
       }
     }
   },
+  "tui": "default",
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark-ansi",
+  "skipAutoPermissionPrompt": true,
   "mcpServers": {
     "kubernetes": {
       "command": "/opt/homebrew/bin/npx",

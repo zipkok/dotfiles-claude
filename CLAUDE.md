@@ -6,6 +6,12 @@
 
 - 요청하는 내용은 다음에도 적용될 수 있도록 CLAUDE.md에 업데이트
 
+## 글로벌 설정 동기화
+
+- `~/.claude/`는 dotfiles-claude repo (main 브랜치). `settings.json`, `claude-powerline.json`, `hooks/`, `rules/`, `output-styles/`, `skills/`, `CLAUDE.md` 등 글로벌 설정 변경 시 **main에 직접 커밋 + push**로 동기화한다.
+- 변경 후 다른 워크스테이션에서 `git pull`로 같은 환경을 재현할 수 있어야 한다.
+- 런타임 산출물(`daemon/`, `jobs/`, `powerline/` 등)은 `.gitignore`에 등록되어 동기화 대상에서 제외된다.
+
 ## 워크플로우
 
 **spex + superpowers** 기반 개발 파이프라인.
