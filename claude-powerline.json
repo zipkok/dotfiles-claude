@@ -20,8 +20,8 @@
       },
       "segments": {
         "git.headVal": {
-          "items": ["{branch}", "{status}", "{ahead}", "{behind}"],
-          "gap": 1
+          "items": ["{branch}"],
+          "gap": 0
         },
         "dir.value": {
           "items": ["pwd :", "{value}"],
@@ -34,7 +34,7 @@
           "areas": [
             "dir.value     dir.value      dir.value      dir.value          dir.value",
             "---",
-            "git.headVal   git.headVal    git.headVal    git.headVal        git.working",
+            "git.headVal   git.headVal    git.headVal    git.headVal        git.headVal",
             "---",
             "context.label  context.bar  context.bar  context.pct     context.tokens",
             "block.label    block.bar    block.bar    block.value     block.time",
@@ -47,7 +47,6 @@
           "minWidth": 0,
           "areas": [
             "git.head",
-            "git.working",
             "---",
             "context",
             "block",
