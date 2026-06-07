@@ -3,8 +3,11 @@ sessions/
 projects/
 shell-snapshots/
 
-# 플러그인 (설치 명령으로 복원)
-plugins/
+# 플러그인 (manifest만 추적: installed_plugins.json, known_marketplaces.json, blocklist.json)
+plugins/cache/
+plugins/data/
+plugins/marketplaces/
+plugins/plugin-catalog-cache.json
 
 # 대화/기록
 *.jsonl
@@ -41,6 +44,9 @@ jobs/
 
 # MCP 인증 캐시
 mcp-needs-auth-cache.json
+
+# GitHub PR 상태 캐시
+gh-pr-status-cache.json
 
 # claude-powerline 사용량 캐시
 powerline/
