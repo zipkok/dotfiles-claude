@@ -20,7 +20,7 @@
       },
       "segments": {
         "git.headVal": {
-          "items": ["{icon}", "{branch}"],
+          "items": ["(", "{icon}", "{branch}", "{working}", ")"],
           "gap": 1
         },
         "dir.value": {
@@ -61,7 +61,7 @@
       {
         "segments": {
           "directory": { "enabled": true, "style": "full" },
-          "git": { "enabled": true, "showAheadBehind": true },
+          "git": { "enabled": true, "showAheadBehind": true, "showWorkingTree": true },
           "model": { "enabled": true },
           "context": { "enabled": true, "autocompactBuffer": 0 },
           "block": { "enabled": true, "type": "tokens" },
