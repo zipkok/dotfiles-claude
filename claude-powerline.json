@@ -20,8 +20,8 @@
       },
       "segments": {
         "git.headVal": {
-          "items": ["{branch}"],
-          "gap": 0
+          "items": ["{icon}", "{branch}"],
+          "gap": 1
         },
         "dir.value": {
           "items": ["pwd :", "{value}"],
