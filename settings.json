@@ -82,7 +82,7 @@
   },
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
-    "spex@cc-rhuss-marketplace": true,
+    "spex@cc-rhuss-marketplace": false,
     "claude-md-management@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
     "last30days@last30days-skill": true,
@@ -122,5 +122,6 @@
         "kubernetes-mcp-server@latest"
       ]
     }
-  }
+  },
+  "skipWorkflowUsageWarning": true
 }
