@@ -22,6 +22,10 @@
         "git.headVal": {
           "items": ["{branch}", "{status}", "{ahead}", "{behind}"],
           "gap": 1
+        },
+        "dir.value": {
+          "items": ["pwd :", "{value}"],
+          "gap": 1
         }
       },
       "breakpoints": [
@@ -34,9 +38,7 @@
             "---",
             "context.label  context.bar  context.bar  context.pct     context.tokens",
             "block.label    block.bar    block.bar    block.value     block.time",
-            "weekly.label   weekly.bar   weekly.bar   weekly.pct      weekly.time",
-            "---",
-            "session.label  session.cost  session.cost  today.label    today.cost"
+            "weekly.label   weekly.bar   weekly.bar   weekly.pct      weekly.time"
           ],
           "columns": ["auto", "1fr", "auto", "auto", "auto"],
           "align": ["left", "left", "right", "right", "right"]
@@ -44,16 +46,12 @@
         {
           "minWidth": 0,
           "areas": [
-            "dir.value",
-            "---",
             "git.head",
             "git.working",
             "---",
             "context",
             "block",
-            "---",
-            "session",
-            "today"
+            "weekly"
           ],
           "columns": ["1fr"],
           "align": ["left"]
