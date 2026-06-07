@@ -33,7 +33,6 @@
           "minWidth": 55,
           "areas": [
             "dir.value     dir.value      dir.value      dir.value          dir.value",
-            "---",
             "git.headVal   git.headVal    git.headVal    git.headVal        git.headVal",
             "---",
             "context.label  context.bar  context.bar  context.pct     context.tokens",
