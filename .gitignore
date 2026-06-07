@@ -33,6 +33,8 @@ statusline-command.sh
 daemon.lock
 daemon.log
 daemon.status.json
+daemon-auth-status.json
+daemon-auth-cooldown
 daemon/
 jobs/
 .last-cleanup
