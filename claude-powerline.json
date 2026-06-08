@@ -20,11 +20,11 @@
       },
       "segments": {
         "git.headVal": {
-          "items": ["(", "{icon}", "{branch}", "{working}", ")"],
+          "items": ["(", "🌿", "{branch}", "{working}", ")"],
           "gap": 1
         },
         "dir.value": {
-          "items": ["pwd :", "{value}"],
+          "items": ["📂", "{value}"],
           "gap": 1
         }
       },
