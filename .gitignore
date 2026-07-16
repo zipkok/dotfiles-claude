@@ -50,3 +50,8 @@ gh-pr-status-cache.json
 
 # claude-powerline 사용량 캐시
 powerline/
+
+# 자동 업데이트/붙여넣기 캐시
+.last-update-result.json
+paste-cache/
+plugins/.last_inuse_sweep

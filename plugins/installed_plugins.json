@@ -4,21 +4,21 @@
     "superpowers@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/woobs/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0",
-        "version": "5.1.0",
+        "installPath": "/Users/woobs/.claude/plugins/cache/claude-plugins-official/superpowers/6.1.1",
+        "version": "6.1.1",
         "installedAt": "2026-04-10T16:32:49.397Z",
-        "lastUpdated": "2026-05-09T00:37:58.514Z",
+        "lastUpdated": "2026-07-04T16:24:29.088Z",
         "gitCommitSha": "917e5f53b16b115b70a3a355ed5f4993b9f8b73d"
       }
     ],
     "spex@cc-rhuss-marketplace": [
       {
         "scope": "user",
-        "installPath": "/Users/woobs/.claude/plugins/cache/cc-rhuss-marketplace/spex/5.6.0",
-        "version": "5.6.0",
+        "installPath": "/Users/woobs/.claude/plugins/cache/cc-rhuss-marketplace/spex/5.9.2",
+        "version": "5.9.2",
         "installedAt": "2026-04-10T16:52:29.569Z",
-        "lastUpdated": "2026-05-26T05:44:41.035Z",
-        "gitCommitSha": "00960a846f3d8583c50447bd5fa9dfa9025d266c"
+        "lastUpdated": "2026-07-04T16:24:31.349Z",
+        "gitCommitSha": "c0f81c3ad9dff69102c5259a984e24b2f90837ee"
       }
     ],
     "claude-md-management@claude-plugins-official": [
@@ -44,11 +44,11 @@
     "last30days@last30days-skill": [
       {
         "scope": "user",
-        "installPath": "/Users/woobs/.claude/plugins/cache/last30days-skill/last30days/3.3.2",
-        "version": "3.3.2",
+        "installPath": "/Users/woobs/.claude/plugins/cache/last30days-skill/last30days/3.16.0",
+        "version": "3.16.0",
         "installedAt": "2026-05-30T14:44:41.836Z",
-        "lastUpdated": "2026-06-07T08:08:58.573Z",
-        "gitCommitSha": "122158415ae421da83e739f2668032f6bc78d39c"
+        "lastUpdated": "2026-07-16T16:47:42.519Z",
+        "gitCommitSha": "249c7a4c040558a903d6838dee31012980d4946d"
       }
     ],
     "claude-powerline@claude-powerline": [

@@ -1,7 +1,12 @@
 {
   "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch"
+    ],
     "defaultMode": "auto"
   },
+  "model": "sonnet",
   "hooks": {
     "PreToolUse": [
       {
@@ -47,6 +52,16 @@
             "timeout": 5
           }
         ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/woobs/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -59,6 +74,16 @@
             "timeout": 5
           }
         ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/woobs/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "UserPromptSubmit": [
@@ -67,6 +92,94 @@
           {
             "type": "command",
             "command": "npx -y ccstatusline@latest --hook"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/woobs/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/woobs/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/woobs/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/woobs/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/woobs/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/woobs/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/woobs/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "TeammateIdle": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/woobs/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/woobs/.orca/agent-hooks/claude-hook.sh'; else cat >/dev/null 2>&1 || :; fi",
+            "timeout": 10
           }
         ]
       }
@@ -110,8 +223,10 @@
       }
     }
   },
+  "effortLevel": "high",
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
   "theme": "dark-ansi",
   "skipAutoPermissionPrompt": true,
   "mcpServers": {
@@ -122,6 +237,5 @@
         "kubernetes-mcp-server@latest"
       ]
     }
-  },
-  "skipWorkflowUsageWarning": true
+  }
 }
