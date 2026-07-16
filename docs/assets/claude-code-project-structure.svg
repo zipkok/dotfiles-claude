@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1170" width="1240" height="1170">
+  <style>
+    .title{font:700 26px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#1a202c;}
+    .subtitle{font:400 14px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#718096;}
+    .badge{font:400 10px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#a0aec0;}
+    .h{font:700 14px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#1a202c;}
+    .hc{font:700 14px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#1a202c; text-anchor:middle;}
+    .desc{font:400 12px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#4a5568; text-anchor:middle;}
+    .b12{font:700 12px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#1a202c; text-anchor:middle;}
+    .b11{font:700 11px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#1a202c; text-anchor:middle;}
+    .s10{font:400 10px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#4a5568; text-anchor:middle;}
+    .s9{font:400 9px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#4a5568; text-anchor:middle;}
+    .s9l{font:400 9px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#4a5568;}
+    .mono{font:400 12.5px 'SF Mono',Consolas,Menlo,monospace; fill:#2d3748;}
+    .monod{font:700 12.5px 'SF Mono',Consolas,Menlo,monospace; fill:#0f172a;}
+    .foot{font:italic 400 12px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#718096; text-anchor:middle;}
+  </style>
+
+  <rect x="0" y="0" width="1240" height="1170" fill="#ffffff"/>
+
+  <text x="30" y="42" class="title">&gt;_ Claude Code 프로젝트 구조</text>
+  <text x="30" y="66" class="subtitle">최대 컨텍스트, 모듈화, 자율성을 위한 최적의 설정</text>
+  <text x="1210" y="42" class="badge" text-anchor="end">재구성 다이어그램</text>
+  <text x="1210" y="56" class="badge" text-anchor="end">(원본: 공유 카드뉴스)</text>
+
+  <!-- 이게 뭐야? -->
+  <rect x="30" y="90" width="1180" height="115" rx="12" fill="#e6fbfa" stroke="#0ea5a3" stroke-width="2"/>
+  <text x="620" y="115" class="hc">이게 뭐야?</text>
+  <text x="620" y="135" class="desc">운영 환경에 바로 쓸 수 있는 Claude Code 설정을 제공합니다.</text>
+  <text x="142" y="183" class="b11">낮은 컨텍스트 비용</text>
+  <text x="381" y="183" class="b11">모듈화된 프롬프트</text>
+  <text x="620" y="183" class="b11">지속적인 메모리</text>
+  <text x="859" y="183" class="b11">자동화된 가드레일</text>
+  <text x="1098" y="183" class="b11">멀티 에이전트 워크플로우</text>
+
+  <!-- 프로젝트 구조 트리 -->
+  <rect x="30" y="225" width="560" height="680" rx="12" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <text x="50" y="252" class="h">프로젝트 구조</text>
+  <g class="mono">
+    <text x="50" y="278">프로젝트 루트/</text>
+    <text x="50" y="298">├─ <tspan class="monod">CLAUDE.md</tspan></text>
+    <text x="50" y="318">├─ CLAUDE.local.md</text>
+    <text x="50" y="338">├─ AGENTS.md</text>
+    <text x="50" y="358">├─ .mcp.json</text>
+    <text x="50" y="378">├─ .worktreeinclude</text>
+    <text x="50" y="398">├─ <tspan class="monod">.claude/</tspan></text>
+    <text x="70" y="418">├─ settings.json / settings.local.json</text>
+    <text x="70" y="438">├─ <tspan class="monod">rules/</tspan>  (testing.md, api-design.md, frontend/react.md)</text>
+    <text x="70" y="458">├─ <tspan class="monod">skills/</tspan>  (security-review/, deploy/, release/…)</text>
+    <text x="70" y="478">├─ <tspan class="monod">agents/</tspan>  (code-reviewer.md, debugger.md, db-validator.md)</text>
+    <text x="70" y="498">├─ <tspan class="monod">workflows/</tspan>  release-train.js</text>
+    <text x="70" y="518">├─ agent-memory/debugger/MEMORY.md</text>
+    <text x="70" y="538">├─ <tspan class="monod">hooks/</tspan>  format.sh, protect.sh</text>
+    <text x="70" y="558">└─ output-styles/review-mode.md</text>
+    <text x="50" y="588">├─ <tspan class="monod">docs/</tspan></text>
+    <text x="70" y="608">├─ architecture.md</text>
+    <text x="70" y="628">└─ decisions/</text>
+    <text x="50" y="658">└─ <tspan class="monod">src/</tspan></text>
+    <text x="70" y="678">├─ api/CLAUDE.md</text>
+    <text x="70" y="698">├─ payments/CLAUDE.md</text>
+    <text x="70" y="718">└─ tools/{scripts/, prompts/}</text>
+  </g>
+  <text x="555" y="880" class="s10" text-anchor="end" font-style="italic">"모든 것이 제자리에!"</text>
+
+  <!-- 컨텍스트 사다리 -->
+  <rect x="610" y="225" width="600" height="150" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="910" y="250" class="hc">컨텍스트 사다리</text>
+
+  <rect x="630" y="260" width="132" height="90" rx="8" fill="#ffffff" stroke="#2563eb"/>
+  <text x="696" y="283" class="b11">① 모든 세션</text>
+  <text x="696" y="302" class="s9">CLAUDE.md</text>
+  <text x="696" y="316" class="s9">+ 규칙</text>
+  <text x="696" y="332" class="s9" font-style="italic">(경로 없음)</text>
+
+  <rect x="772" y="260" width="132" height="90" rx="8" fill="#ffffff" stroke="#2563eb"/>
+  <text x="838" y="283" class="b11">② 경로 기반</text>
+  <text x="838" y="305" class="s9">rules/*.md</text>
+  <text x="838" y="321" class="s9" font-style="italic">(지연 로드)</text>
+
+  <rect x="914" y="260" width="132" height="90" rx="8" fill="#ffffff" stroke="#2563eb"/>
+  <text x="980" y="283" class="b11">③ 호출 시</text>
+  <text x="980" y="305" class="s9">skills/*</text>
+  <text x="980" y="321" class="s9" font-style="italic">(via /이름)</text>
+
+  <rect x="1056" y="260" width="132" height="90" rx="8" fill="#ffffff" stroke="#2563eb"/>
+  <text x="1122" y="283" class="b11">④ 격리 수준</text>
+  <text x="1122" y="302" class="s9">에이전트 &amp; 워크트리</text>
+  <text x="1122" y="318" class="s9" font-style="italic">(자체 컨텍스트)</text>
+
+  <!-- 지침 vs 강제 규칙 -->
+  <rect x="610" y="385" width="600" height="230" rx="12" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="910" y="410" class="hc">지침 vs 강제 규칙</text>
+
+  <rect x="630" y="420" width="270" height="180" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="765" y="443" class="b12">CLAUDE.md / rules</text>
+  <text x="765" y="459" class="s10">= 요청 사항</text>
+  <text x="765" y="482" class="s9">Claude는 지침을 읽고</text>
+  <text x="765" y="498" class="s9">일반적으로 따릅니다.</text>
+  <text x="765" y="518" class="s9">대화·명령·아키텍처</text>
+  <text x="765" y="534" class="s9">컨텍스트를 이해합니다.</text>
+
+  <text x="910" y="515" class="hc" font-size="16" font-weight="700">VS</text>
+
+  <rect x="920" y="420" width="270" height="180" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="1055" y="443" class="b12">settings + hooks</text>
+  <text x="1055" y="459" class="s10">= 강제 사항</text>
+  <text x="1055" y="482" class="s9">permissions.deny,</text>
+  <text x="1055" y="498" class="s9">rm -rf 차단.</text>
+  <text x="1055" y="518" class="s9">Claude 허용 여부와 무관하게 차단.</text>
+  <text x="1055" y="534" class="s9">PostToolUse는 모든 편집에 적용.</text>
+
+  <!-- 에이전트 계층 -->
+  <rect x="610" y="625" width="600" height="280" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="910" y="650" class="hc">에이전트 계층</text>
+
+  <rect x="630" y="662" width="560" height="66" rx="8" fill="#ffffff" stroke="#7c3aed"/>
+  <text x="910" y="683" class="b12">서브에이전트 — agents/*.md</text>
+  <text x="910" y="701" class="s10">고유한 프롬프트 · 도구 · 모델 · 메모리를 가진 독립 프로젝트</text>
+
+  <rect x="630" y="740" width="560" height="66" rx="8" fill="#ffffff" stroke="#7c3aed"/>
+  <text x="910" y="761" class="b12">워크플로우 — workflows/*.js</text>
+  <text x="910" y="779" class="s10">여러 서브에이전트를 하나의 명령으로 오케스트레이션</text>
+
+  <rect x="630" y="818" width="560" height="66" rx="8" fill="#ffffff" stroke="#7c3aed"/>
+  <text x="910" y="839" class="b12">워크트리 — .worktreeinclude</text>
+  <text x="910" y="857" class="s10">격리된 체크아웃에서 여러 에이전트를 병렬 실행 (.env 포함)</text>
+
+  <!-- 자동 메모리 / Hooks -->
+  <rect x="30" y="925" width="580" height="110" rx="12" fill="#e6fbfa" stroke="#0ea5a3" stroke-width="2"/>
+  <text x="320" y="950" class="hc">자동 메모리</text>
+  <text x="320" y="970" class="desc">Claude가 작성한 내용은 커밋됩니다.</text>
+  <text x="320" y="988" class="desc">세션 간 메모리는 agent-memory/와</text>
+  <text x="320" y="1006" class="desc">~/.claude/projects/에 지속 저장됩니다.</text>
+
+  <rect x="630" y="925" width="580" height="110" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="920" y="950" class="hc">Hooks</text>
+  <text x="920" y="970" class="desc">settings.json에 연결된 스크립트.</text>
+  <text x="920" y="988" class="desc">도구 사용 전후에</text>
+  <text x="920" y="1006" class="desc">가드레일을 적용합니다.</text>
+
+  <!-- 실무 팁 -->
+  <rect x="30" y="1055" width="224" height="70" rx="10" fill="#f1f5f9" stroke="#475569"/>
+  <text x="142" y="1080" class="s9">CLAUDE.md는 200줄 미만으로!</text>
+  <text x="142" y="1096" class="s9">커질 때마다 rules/로 분리</text>
+
+  <rect x="269" y="1055" width="224" height="70" rx="10" fill="#f1f5f9" stroke="#475569"/>
+  <text x="381" y="1080" class="s9">실제 명령어 목록(npm test/build/lint)</text>
+  <text x="381" y="1096" class="s9">Claude가 스스로 검증할 수 있게</text>
+
+  <rect x="508" y="1055" width="224" height="70" rx="10" fill="#f1f5f9" stroke="#475569"/>
+  <text x="620" y="1080" class="s9">비밀은 $(ENV_VAR)로 관리</text>
+  <text x="620" y="1096" class="s9">.mcp.json에 직접 기록 금지</text>
+
+  <rect x="747" y="1055" width="224" height="70" rx="10" fill="#f1f5f9" stroke="#475569"/>
+  <text x="859" y="1080" class="s9">.claude/를 커밋하고</text>
+  <text x="859" y="1096" class="s9">.gitignore에 *.local.*</text>
+
+  <rect x="986" y="1055" width="224" height="70" rx="10" fill="#f1f5f9" stroke="#475569"/>
+  <text x="1098" y="1080" class="s9">연구→서브에이전트</text>
+  <text x="1098" y="1096" class="s9">절차→스킬, 보장→Hook</text>
+
+  <text x="620" y="1155" class="foot">이 저장소(dotfiles-claude)의 실제 구조(rules/, skills/, agents/, hooks/)와 상당 부분 대응됨</text>
+</svg>

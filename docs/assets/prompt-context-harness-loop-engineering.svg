@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 930" width="1240" height="930">
+  <style>
+    .title{font:700 28px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#1a202c;}
+    .subtitle{font:400 14px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#718096;}
+    .ptitle{font:700 16px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#ffffff;}
+    .psub{font:400 12px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#ffffff; opacity:0.9;}
+    .lbl{font:600 12px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#4a5568;}
+    .lblc{font:600 12px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#4a5568; text-anchor:middle;}
+    .body{font:600 13px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#1a202c; text-anchor:middle;}
+    .bodysm{font:400 11px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#4a5568; text-anchor:middle;}
+    .bodyxs{font:400 10px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#4a5568; text-anchor:middle;}
+    .loop{font:italic 400 11px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#718096; text-anchor:middle;}
+    .foot{font:italic 500 15px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#2d3748; text-anchor:middle;}
+    .src{font:400 11px 'Segoe UI',Helvetica,Arial,sans-serif; fill:#a0aec0; text-anchor:middle;}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1240" height="930" fill="#ffffff"/>
+
+  <text x="620" y="42" class="title" text-anchor="middle">Prompt / Context / Harness / Loop Engineering</text>
+  <text x="620" y="66" class="subtitle" text-anchor="middle">four layers, zooming further out each time</text>
+
+  <!-- ============ PANEL 1: Prompt engineering ============ -->
+  <g>
+    <rect x="30" y="90" width="580" height="380" rx="14" fill="#ffffff" stroke="#0f9d8f" stroke-width="2"/>
+    <rect x="32" y="92" width="576" height="36" rx="10" fill="#0f9d8f"/>
+    <text x="50" y="115" class="ptitle">① Prompt engineering</text>
+    <text x="590" y="115" class="psub" text-anchor="end">The message</text>
+
+    <rect x="50" y="145" width="540" height="34" rx="8" fill="#e8f9f6" stroke="#0f9d8f"/>
+    <text x="320" y="166" class="bodysm">Inputs:  Role · Instructions · Examples · Format</text>
+
+    <line x1="320" y1="183" x2="320" y2="206" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="380" y="199" class="loop" text-anchor="start">① Compose</text>
+
+    <rect x="50" y="209" width="540" height="70" rx="8" fill="#ffffff" stroke="#0f9d8f" stroke-width="2"/>
+    <text x="320" y="228" class="body">PROMPT</text>
+    <text x="320" y="245" class="bodyxs">"You are a senior engineer…" "Given these docs…"</text>
+    <text x="320" y="259" class="bodyxs">"Respond in JSON"</text>
+    <text x="320" y="273" class="bodyxs" font-style="italic">one assembled input</text>
+
+    <line x1="320" y1="283" x2="320" y2="306" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="380" y="299" class="loop" text-anchor="start">② Send</text>
+
+    <rect x="50" y="309" width="540" height="34" rx="8" fill="#e8f9f6" stroke="#0f9d8f"/>
+    <text x="320" y="330" class="body">⚙ LLM Inference</text>
+
+    <line x1="320" y1="347" x2="320" y2="370" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="380" y="363" class="loop" text-anchor="start">③ Generate</text>
+
+    <rect x="50" y="373" width="540" height="34" rx="8" fill="#ffffff" stroke="#0f9d8f" stroke-width="2"/>
+    <text x="320" y="394" class="bodysm">Response — raw output</text>
+
+    <text x="320" y="435" class="loop">↺ ④ Refine: adjust the weakest ingredient — unit of work: one input</text>
+  </g>
+
+  <!-- ============ PANEL 2: Context engineering ============ -->
+  <g>
+    <rect x="630" y="90" width="580" height="380" rx="14" fill="#ffffff" stroke="#2f6fed" stroke-width="2"/>
+    <rect x="632" y="92" width="576" height="36" rx="10" fill="#2f6fed"/>
+    <text x="650" y="115" class="ptitle">② Context engineering</text>
+    <text x="1190" y="115" class="psub" text-anchor="end">The memory</text>
+
+    <rect x="650" y="145" width="540" height="34" rx="8" fill="#eaf2ff" stroke="#2f6fed"/>
+    <text x="920" y="166" class="bodyxs">Inputs:  Query · Docs · Memory · Tool Outputs · Prior turns</text>
+
+    <line x1="920" y1="183" x2="920" y2="206" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="980" y="199" class="loop" text-anchor="start">① Gather</text>
+
+    <rect x="650" y="209" width="540" height="50" rx="8" fill="#ffffff" stroke="#2f6fed" stroke-width="2"/>
+    <text x="920" y="230" class="body">Curator</text>
+    <text x="920" y="248" class="bodyxs">select, compress, drop</text>
+
+    <line x1="920" y1="263" x2="920" y2="286" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="980" y="279" class="loop" text-anchor="start">② Curate</text>
+
+    <rect x="650" y="289" width="540" height="70" rx="8" fill="#eaf2ff" stroke="#2f6fed"/>
+    <text x="920" y="308" class="body">Context window</text>
+    <text x="920" y="325" class="bodyxs">chunk · chunk · ≈compressed · dropped</text>
+    <text x="920" y="340" class="bodyxs" font-style="italic">finite budget</text>
+
+    <line x1="920" y1="363" x2="920" y2="386" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="980" y="379" class="loop" text-anchor="start">③ Feed</text>
+
+    <rect x="650" y="389" width="540" height="34" rx="8" fill="#ffffff" stroke="#2f6fed" stroke-width="2"/>
+    <text x="920" y="410" class="bodysm">⚙ LLM Inference → Response / tool call</text>
+
+    <text x="920" y="452" class="loop">↺ ④ Update working set: outputs become context for the next step</text>
+  </g>
+
+  <!-- ============ PANEL 3: Harness engineering ============ -->
+  <g>
+    <rect x="30" y="490" width="580" height="380" rx="14" fill="#ffffff" stroke="#1f9d55" stroke-width="2"/>
+    <rect x="32" y="492" width="576" height="36" rx="10" fill="#1f9d55"/>
+    <text x="50" y="515" class="ptitle">③ Harness engineering</text>
+    <text x="590" y="515" class="psub" text-anchor="end">The machine</text>
+
+    <text x="320" y="540" class="lblc">GATHER</text>
+    <rect x="50" y="545" width="260" height="40" rx="8" fill="#eafaf0" stroke="#1f9d55"/>
+    <text x="180" y="562" class="bodyxs">Context zone</text>
+    <text x="180" y="577" class="bodyxs" font-style="italic">Curator</text>
+    <rect x="330" y="545" width="260" height="40" rx="8" fill="#eafaf0" stroke="#1f9d55"/>
+    <text x="460" y="562" class="bodyxs">Prompt zone</text>
+    <text x="460" y="577" class="bodyxs" font-style="italic">Prompt</text>
+
+    <line x1="320" y1="589" x2="320" y2="612" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="380" y="605" class="loop" text-anchor="start">① Act</text>
+
+    <rect x="50" y="615" width="540" height="34" rx="8" fill="#ffffff" stroke="#1f9d55" stroke-width="2"/>
+    <text x="320" y="636" class="body">⚙ LLM Inference</text>
+
+    <line x1="320" y1="653" x2="320" y2="676" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="50" y="679" width="260" height="40" rx="8" fill="#eafaf0" stroke="#1f9d55"/>
+    <text x="180" y="696" class="bodyxs">Tools</text>
+    <text x="180" y="711" class="bodyxs" font-style="italic">exec, fetch</text>
+    <rect x="330" y="679" width="260" height="40" rx="8" fill="#eafaf0" stroke="#1f9d55"/>
+    <text x="460" y="696" class="bodyxs">Sub-agents</text>
+    <text x="460" y="711" class="bodyxs" font-style="italic">specialists</text>
+
+    <line x1="320" y1="723" x2="320" y2="746" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="380" y="739" class="loop" text-anchor="start">② Verify</text>
+
+    <rect x="50" y="749" width="540" height="40" rx="8" fill="#ffffff" stroke="#1f9d55" stroke-width="2"/>
+    <text x="320" y="765" class="bodysm">Verifier — tests, judge</text>
+    <text x="320" y="781" class="bodyxs">→ final response, pass to user</text>
+
+    <text x="320" y="820" class="loop">↺ ③ Retry: re-run gather→act→verify — unit of work: the machine</text>
+  </g>
+
+  <!-- ============ PANEL 4: Loop engineering ============ -->
+  <g>
+    <rect x="630" y="490" width="580" height="380" rx="14" fill="#ffffff" stroke="#6b4fd6" stroke-width="2"/>
+    <rect x="632" y="492" width="576" height="36" rx="10" fill="#6b4fd6"/>
+    <text x="650" y="515" class="ptitle">④ Loop engineering</text>
+    <text x="1190" y="515" class="psub" text-anchor="end">The system</text>
+
+    <rect x="650" y="545" width="540" height="40" rx="8" fill="#eef0fd" stroke="#6b4fd6"/>
+    <text x="920" y="562" class="bodysm">Goal + success criteria</text>
+    <text x="920" y="578" class="bodyxs" font-style="italic">defined upfront, not a vibe</text>
+
+    <line x1="920" y1="589" x2="920" y2="612" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="980" y="605" class="loop" text-anchor="start">① Run</text>
+
+    <rect x="650" y="615" width="540" height="60" rx="8" fill="#ffffff" stroke="#6b4fd6" stroke-width="2"/>
+    <text x="920" y="634" class="body">HARNESS</text>
+    <text x="920" y="650" class="bodyxs">gather → act → verify, one pass</text>
+    <text x="920" y="664" class="bodyxs" font-style="italic">may say "done" on its own — that's not verified</text>
+
+    <line x1="920" y1="679" x2="920" y2="702" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="980" y="695" class="loop" text-anchor="start">② Check</text>
+
+    <rect x="650" y="705" width="129" height="46" rx="6" fill="#eef0fd" stroke="#6b4fd6"/>
+    <text x="714" y="725" class="bodyxs">Max iterations</text>
+    <text x="714" y="739" class="bodyxs" font-style="italic">hard cap</text>
+    <rect x="787" y="705" width="129" height="46" rx="6" fill="#eef0fd" stroke="#6b4fd6"/>
+    <text x="851" y="725" class="bodyxs">Budget / time</text>
+    <text x="851" y="739" class="bodyxs" font-style="italic">token / $ / sec</text>
+    <rect x="924" y="705" width="129" height="46" rx="6" fill="#eef0fd" stroke="#6b4fd6"/>
+    <text x="988" y="725" class="bodyxs">No progress</text>
+    <text x="988" y="739" class="bodyxs" font-style="italic">same call / args</text>
+    <rect x="1061" y="705" width="129" height="46" rx="6" fill="#eef0fd" stroke="#6b4fd6"/>
+    <text x="1125" y="725" class="bodyxs">Completion check</text>
+    <text x="1125" y="739" class="bodyxs" font-style="italic">tests pass</text>
+
+    <line x1="920" y1="755" x2="920" y2="778" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="920" y="770" class="bodyxs" text-anchor="middle" font-style="italic">③ Decide: brake tripped, or actually done?</text>
+
+    <rect x="650" y="781" width="540" height="40" rx="8" fill="#ffffff" stroke="#6b4fd6" stroke-width="2"/>
+    <text x="920" y="797" class="bodysm">Final Response</text>
+    <text x="920" y="813" class="bodyxs">yes: completion check confirmed it's done</text>
+
+    <text x="920" y="845" class="loop">↺ ④ Not finished yet: context += results, repeat — unit of work: the run</text>
+  </g>
+
+  <text x="620" y="900" class="foot">Each layer wraps the one before it — the model is the commodity, the loop around it is the engineering.</text>
+  <text x="620" y="919" class="src">source: DailyDoseofDS.com — 원본 다이어그램 구조를 참고해 재구성 (하네스 카드뉴스 보완자료)</text>
+</svg>
