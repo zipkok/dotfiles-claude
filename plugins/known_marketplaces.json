@@ -5,7 +5,7 @@
       "repo": "anthropics/claude-plugins-official"
     },
     "installLocation": "/Users/woobs/.claude/plugins/marketplaces/claude-plugins-official",
-    "lastUpdated": "2026-06-07T16:57:37.065Z"
+    "lastUpdated": "2026-07-16T18:06:17.010Z"
   },
   "cc-rhuss-marketplace": {
     "source": {
@@ -13,7 +13,7 @@
       "repo": "rhuss/cc-rhuss-marketplace"
     },
     "installLocation": "/Users/woobs/.claude/plugins/marketplaces/cc-rhuss-marketplace",
-    "lastUpdated": "2026-07-16T16:57:06.507Z",
+    "lastUpdated": "2026-07-16T18:06:21.321Z",
     "autoUpdate": true
   },
   "last30days-skill": {
@@ -22,7 +22,7 @@
       "repo": "mvanhorn/last30days-skill"
     },
     "installLocation": "/Users/woobs/.claude/plugins/marketplaces/last30days-skill",
-    "lastUpdated": "2026-07-16T16:57:04.217Z",
+    "lastUpdated": "2026-07-16T17:56:45.742Z",
     "autoUpdate": true
   },
   "claude-powerline": {

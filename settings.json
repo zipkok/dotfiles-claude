@@ -194,7 +194,7 @@
     "command": "jq -r 'first(.agent.name, .agent_name, .name, .session.name) // \"subagent\"' 2>/dev/null || echo subagent"
   },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": false,
     "spex@cc-rhuss-marketplace": false,
     "claude-md-management@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
@@ -237,5 +237,6 @@
         "kubernetes-mcp-server@latest"
       ]
     }
-  }
+  },
+  "agentPushNotifEnabled": true
 }
