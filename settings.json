@@ -35,6 +35,11 @@
             "type": "command",
             "command": "bash ~/.claude/hooks/require-tests.sh",
             "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/allow-curl-get.sh",
+            "timeout": 5
           }
         ]
       },
@@ -187,7 +192,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "npx -y @owloops/claude-powerline@latest"
+    "command": "input=$(cat)\nprintf '%s' \"$input\" | npx -y @owloops/claude-powerline@latest\ntp=$(printf '%s' \"$input\" | jq -r '.transcript_path // empty' 2>/dev/null)\nif [ -n \"$tp\" ] && [ -f \"$tp\" ]; then\n  skill=$(tail -n 400 \"$tp\" 2>/dev/null | jq -rs 'map(select(.type==\"assistant\")) | last | .attributionSkill // empty' 2>/dev/null)\n  [ -n \"$skill\" ] && [ \"$skill\" != \"null\" ] && printf '\\nSkill: %s\\n' \"$skill\"\nfi"
   },
   "subagentStatusLine": {
     "type": "command",
@@ -224,10 +229,12 @@
     }
   },
   "effortLevel": "high",
+  "advisorModel": "opus",
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
   "theme": "dark-ansi",
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "mcpServers": {
     "kubernetes": {
@@ -237,6 +244,5 @@
         "kubernetes-mcp-server@latest"
       ]
     }
-  },
-  "agentPushNotifEnabled": true
+  }
 }
