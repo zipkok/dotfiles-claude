@@ -1,0 +1,17 @@
+{
+  "_note": "손으로 유지되는 목록. 이 환경에서 실제로 제공되는 built-in 서브에이전트(Explore, Plan, general-purpose 등)는 Claude Code 자체 설정에 있고 이 저장소에서 코드로 조회할 수 없다. 트리거 정확도 테스트에서 '위임 자체가 필요 없거나 범용 에이전트가 이긴다'는 가장 흔한 negative 케이스를 놓치지 않도록, 이 저장소 커스텀 에이전트와 경쟁하는 실제 built-in만 선별해 담았다. Claude Code의 built-in 서브에이전트 목록/설명이 바뀌면 이 파일도 갱신해야 한다.",
+  "agents": [
+    {
+      "name": "general-purpose",
+      "description": "General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you."
+    },
+    {
+      "name": "Explore",
+      "description": "Fast read-only search agent for locating code. Use it to find files by pattern, grep for symbols or keywords, or answer 'where is X defined / which files reference Y.' Do NOT use it for code review, design-doc auditing, cross-file consistency checks, or open-ended analysis."
+    },
+    {
+      "name": "Plan",
+      "description": "Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs."
+    }
+  ]
+}

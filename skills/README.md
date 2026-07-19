@@ -4,8 +4,11 @@
 
 | 디렉터리 | 역할 |
 |----------|------|
+| `agent-creator/` | 서브에이전트(`agents/*.md`) 생성·검증·평가(문법 검증, 실행 품질 리뷰, 트리거 정확도 최적화) |
 | `directory/` | `/directory <path>` — Repository 디렉터리 기준으로 작업 디렉터리 변경 |
+| `doc-review/` | 영어 문서를 6개 디멘션(구조/문법/가독성/재현성/용어/톤)으로 병렬 리뷰해 하나의 리포트로 수렴 |
 | `jd-analyze/` | `jds/` 폴더의 채용공고를 분석해 `analysis/`에 필요 기술·공부 방향 저장 |
+| `ship-discussion/` | 논쟁적·모호한 주제를 소크라테스식 문답으로 정리해 결론 도출 (`docs/rfc/`에 결과 저장) |
 | `skill-creator/` | 스킬 생성·개선·평가(eval, 벤치마크, 트리거 정확도 최적화) |
 | `unity-mcp-skill/` | Unity Editor MCP 오케스트레이션 (GameObject·씬·테스트 자동화) |
 | `wiki-ingest/` | 소스(링크·텍스트·파일)를 LLM Wiki에 인제스트 |

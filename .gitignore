@@ -2,3 +2,14 @@
 # 실수로 백업 사본이 남는 경우를 대비한 안전장치
 *.bak
 *.orig
+
+# agent-creator/skill-creator 실행 산출물 (반복 기록, eval 결과, 리포트)
+skills/agent-creator/workspaces/
+skills/*-workspace/
+
+# Python 캐시 (agent-creator/skill-creator 스크립트 실행 시 생성)
+__pycache__/
+*.pyc
+
+# ship-discussion 등 스킬 실행 중에만 존재하는 상태 파일
+.claude/state/
