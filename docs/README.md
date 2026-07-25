@@ -5,6 +5,7 @@
 | 파일/디렉터리 | 내용 |
 |------|------|
 | `agent-harness-design.md` | 하네스(harness) 개념 정리와 이 저장소 구조와의 대응 |
+| `spex-ship-guide.md` | `/speckit-spex-ship` 사용 가이드 — 신규 기능 개발을 spec부터 review까지 원클릭 진행 |
 | `assets/` | 문서에 쓰이는 도식 이미지 |
 | `specs/` | 기능/변경 단위 설계 문서, 구현 전에 먼저 기록 |
 | `adrs/` | Architecture Decision Record — 결정 1개당 파일 1개, Nygard 형식 |

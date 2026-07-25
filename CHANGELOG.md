@@ -3,6 +3,25 @@
 이 저장소(`dotfiles-claude`)의 변경사항을 기능별·작업별로 날짜와 함께 기록한다.
 카테고리: 추가 / 변경 / 수정 / 삭제 (`rules/documentation.md` 참조)
 
+## 2026-07-25 (ship-develop — 스킬 대신 spex ship 사용 가이드)
+
+`docs/specs/2026-07-14-ship-ideation-framework-design.md`의 `ship-develop`을 `ship-discussion`처럼
+스킬(skill/Workflow/신규 에이전트)로 구현하려 했으나, spex 플러그인(`rhuss/cc-spex`)의
+`/speckit-spex-ship`이 이미 specify→clarify→review-spec→plan→tasks→review-plan→implement→
+review-code 8단계를 게이트·재시도 루프까지 포함해 완전 자동으로 제공하고 있음을 확인. 얇은 래퍼
+스킬을 얹어도 이득(산출물 재배치, 게이트 리포트 영속화)보다 유지보수 부담(spex 커맨드 변경에
+동기화 필요)이 크다고 판단해 **스킬을 만들지 않고 사용 가이드 문서로 대체**하기로 결정.
+
+### 추가
+- `docs/spex-ship-guide.md` — `/speckit-spex-init` 초기화, `/speckit-spex-brainstorm` →
+  `/speckit-spex-ship --ask smart` 사용 순서, 오버사이트 레벨 표, 주의사항(작업 트리 자동 커밋,
+  종료 시 "Stop here" 권장 — spex 기본 추천인 "Submit PR"과 다름을 명시), 산출물 위치 안내
+
+### 변경
+- `settings.json` — `spex@cc-rhuss-marketplace` 활성화
+- `README.md` — 플러그인 표 spex 활성화 반영, 워크플로우 요약 표에 "신규 기능 개발" 행 추가
+- `docs/README.md` — `spex-ship-guide.md` 목록에 추가
+
 ## 2026-07-19 (ship-discussion 재설계 — 대안 스코어카드 설계 병합)
 
 사용자가 별도로 설계한 spec-kit 스타일 논의 파이프라인(슬래시커맨드 5개 + 정량 게이트 스코어카드)을
