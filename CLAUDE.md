@@ -4,11 +4,13 @@
 
 
 
-# 목적 
+# 목적
 
 - dotfiles-claude는 모든 프로젝트에서 사용할 수 있는 Harness, Loop Engineering 도구이다.
 - dotfiles-claude는 woobs의 MacAir ~/.claude 를 심볼릭 링크한다.
-- 
+- ./docs/best-practice를 참조하여 좋은 도구가 될 수 있도록 유지한다.
+
+
 
 ## 프로젝트의 CLAUDE.md
 
@@ -20,8 +22,3 @@
 - 세션·캐시·데몬 로그 등 런타임 데이터(`sessions/`, `projects/`, `cache/`, `daemon/`, `history.jsonl` 등과 `plugins/cache`·`plugins/data`·`plugins/marketplaces`)는 저장소 밖 실제 `~/.claude`에 그대로 존재하며 저장소에는 절대 들어오지 않는다.
 - 저장소에 새 설정 폴더/파일을 추가하면 `~/.claude`에도 `ln -s`로 수동 연결해야 한다 (자동 반영 안 됨).
 
-
-
-&nbsp;
-
-&nbsp;
