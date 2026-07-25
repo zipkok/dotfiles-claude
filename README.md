@@ -81,8 +81,8 @@ Claude Code 하네스 설정 파일. 새 노트북에서 클론하면 동일한 
 
 | 플러그인 | 마켓플레이스 | 활성화 | 역할 |
 |---------|------------|:---:|------|
-| superpowers | claude-plugins-official | ❌ | TDD, 규율, 브레인스토밍 등 스킬 모음 (현재 비활성화) |
-| spex | cc-rhuss-marketplace | ❌ | SDD, speckit CLI 통합 (현재 비활성화) |
+| superpowers | claude-plugins-official | ✅ | TDD, 규율, 브레인스토밍 등 스킬 모음 |
+| spex | cc-rhuss-marketplace | ✅ | SDD, speckit CLI 통합 — `/speckit-spex-ship` 사용법은 [`docs/spex-ship-guide.md`](docs/spex-ship-guide.md) 참고 |
 | claude-md-management | claude-plugins-official | ✅ | CLAUDE.md 감사·개선 |
 | swift-lsp | claude-plugins-official | ✅ | Swift LSP 연동 |
 | last30days | last30days-skill | ✅ | 최근 30일 웹/커뮤니티 리서치 |
@@ -132,4 +132,5 @@ claude
 | 로컬/PR diff 리뷰 | `/review` |
 | PR 생성 | `/pr` |
 | 새 기능 구현 (브레인스토밍부터) | `superpowers:brainstorming` → `superpowers:writing-plans` → `superpowers:test-driven-development` |
+| 신규 기능 개발 (spec부터 구현·리뷰까지 원클릭) | `/speckit-spex-brainstorm` → `/speckit-spex-ship` — [`docs/spex-ship-guide.md`](docs/spex-ship-guide.md) |
 | 버그 수정 | `superpowers:systematic-debugging` → `superpowers:test-driven-development` |
